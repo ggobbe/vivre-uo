@@ -1,0 +1,21 @@
+//created by henry_r
+//12/19/07
+
+//[RunUO 2.0 RC1]
+
+//for use with DruidSpellsSubmission by Slithers (original authors of Druid System/spells unknown)
+
+//contains: Evil Druid mobile with special ability *swarm of insects* 
+// *swarm of insects* is repelled by holding a lit torch in your hands or death  
+// 
+
+//mobile drops random Druid Scrolls, random Druid reagents; small chance for Druidic Spellbook, and a smaller chance for Druid Cloak
+
+//installation instructions: drop Druid Mobiles folder into Druid System folder; restart server; [add evildruid
+
+//change or modify to suit your needs - enjoy :)
+
+//modified by Vindicat for RunUO 2.0 RC2
+// 21/04/08
+//Fixed the swarm of insects so it now wears out in time as intended.  You no longer have to die if you are caught without a torch!
+//There was no Druid Cloak when I got this so I made a  powerful one that drops very rarely --- 3 in 1000 chance

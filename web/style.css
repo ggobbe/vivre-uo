@@ -1,0 +1,50 @@
+body {
+	background-color: #000000;
+	color: #C1C1C1;
+	font-size: 12px;
+	font-family: Tahoma, Arial, sans-serif;
+	width: 600px;
+	margin: auto;
+	border: 1px solid #C1C1C1;
+	/*min-height: 500px;*/
+	margin-top: 3px;
+}
+
+h1 {
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 18px;
+	padding-left: 3px;
+}
+
+p#header {
+	padding: 3px;
+}
+
+table#players {
+	width: 600px;
+	margin: auto;
+}
+
+tr.titleRow {
+	background-color: #270303;
+	font-family: Tahoma, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 13px;
+	text-align: left;
+	color : #968865;
+}
+
+tr.light {
+	background-color: #333333;
+}
+
+th, td {
+	padding: 3px;
+}
+
+p#footer {
+	margin-top: 30px;
+	margin-right: 3px;
+	font-size: 10px; 
+	text-align: right;
+}

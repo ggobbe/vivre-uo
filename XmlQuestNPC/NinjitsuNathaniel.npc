@@ -1,0 +1,139 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Nathaniel</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <NoTriggerOnCarried>Je marcherai parmis les Ombres | ATTACHMENT,Je marcherai parmis les Ombres,XmlQuestAttachement</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>5</ResetTime>
+    <ConfigFile>NinjitsuNathaniel</ConfigFile>
+    <SpeechEntries>9</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>10</EntryNumber>
+    <ID>10</ID>
+    <Action>TAKE,1,1,false/Lassombra;SETONCARRIED,Je marcherai parmis les Ombres,questholder/Completed1/true/DELETE</Action>
+    <Condition>GETONCARRIED,Lassombra,Visible=true;GETONCARRIED,Je marcherai parmis les Ombres,Visible=true</Condition>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Nathaniel,0/Oui !! c'est bien elle ! Vous vous êtes montré prometteur...Ecoutez, je ne devrais pas vous dire ça, mais si vous voulez en savoir plus...rendez vous à la guilde des voleurs de la vieille Haven. Dites que vous venez de ma part. Le mot de passe est Rose Trémière. Non, ne vous demandez pas pourquoi. Allez, maintenant !</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>20</EntryNumber>
+    <ID>20</ID>
+    <Text>Mon enfant, j'ai un problème que vous pourrez peut être m'aider à résoudre...m'aiderez-vous ?</Text>
+    <Condition>GETONTRIGMOB,skills.hiding.value&gt;40</Condition>
+    <DependsOn>-2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>30</EntryNumber>
+    <ID>30</ID>
+    <Keywords>oui,aide,bien sur</Keywords>
+    <Condition>GETONTRIGMOB,skills.hiding.value&gt;40</Condition>
+    <DependsOn>20</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Nathaniel,4/C'est un travail qui demande une personne de la discrétion, et je ne voudrais pas que cela s'ébruite;Voici qui est intriguant, je vous en prie, poursuivez;accept;Hmm,vous me semblez sournois et biaiseux, n'y comptez pas;refuse</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>40</EntryNumber>
+    <ID>40</ID>
+    <Keywords>accept</Keywords>
+    <Condition>GETONTRIGMOB,skills.hiding.value&gt;40</Condition>
+    <DependsOn>30</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Nathaniel,4/Si vous m'aidez, je pourrais vous apprendre à bénéficier des ombres comme personne...Une forme de magie redoutable... Alors, interressé ?;C'est un pouvoir que je désire, j'oeuvrerai pour vous;accept1;Pfff, je n'ai pas besoin de tels artifices. je décline.;refuse1</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>50</EntryNumber>
+    <ID>50</ID>
+    <Keywords>refuse</Keywords>
+    <Action>SETONTHIS/MSG/Tant pis, revenez me voir si vous changez d'avis.../doreset/true</Action>
+    <DependsOn>30,40,60</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>60</EntryNumber>
+    <ID>60</ID>
+    <Keywords>accept1</Keywords>
+    <DependsOn>40</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Nathaniel,4/Très bien, l'affaire est délicate...Un marchand m'a dérobé quelque chose auquel je tiens particulièrement, une vielle dague sans intéret. Je veux la récupérer. Mais pour cela il faudra lui tendre une embuscade. Il devrait passer non loin de la mine au sud de Haven. Prenez une bonne cachette, et attendez le. Mais attention, il risque d'être accompagné !;Pas de problème, il est comme mort;quest;Non, je ne donne pas dans ce genre la. Adieu ! ;refuse</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>70</EntryNumber>
+    <ID>70</ID>
+    <Keywords>quest</Keywords>
+    <Action>GIVE/&lt;questholder/name/Je marcherai parmis les Ombres/notestring/Prenez le marchand en embuscade, il ne doit se douter de rien ! Puis récupérez Lassombra s et rendez la à Nathaniel /objective1/COLLECTNAMED,Lassombra ,1/autoreward/false/repeatable/false;SETONTHIS/MSG/Je vous attendrais ici, bonne chance.../doreset/true</Action>
+    <DependsOn>60</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>80</EntryNumber>
+    <ID>80</ID>
+    <DependsOn />
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

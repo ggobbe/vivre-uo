@@ -1,0 +1,140 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Terry</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <TriggerOnCarried>Codex de Bataille,Bookofchivalry</TriggerOnCarried>
+    <NoTriggerOnCarried>ATTACHMENT,La Voie de la Vertu,XmlQuestAttachment</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>1</ResetTime>
+    <ConfigFile>VindsTheodosPriest</ConfigFile>
+    <SpeechEntries>9</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <DependsOn>-2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>10</EntryNumber>
+    <ID>10</ID>
+    <Text>Vous avez réussi ?! Fantastique ! Quelle bataille cela à du être ! Je ne peux plus rien vous apprendre, mais acceptez ceci, avec ma bénédiction !</Text>
+    <Action>GIVE/dispelevilscroll ;SETONCARRIED,La Voie de la Vertu/DELETE ; SETONTRIGMOB/ATTACH/La Voie de la Vertu,XmlQuestAttachment</Action>
+    <Condition>GETONCARRIED,La Voie de la Vertu,questholder,,completed3=true </Condition>
+    <DependsOn>0,-2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>20</EntryNumber>
+    <ID>20</ID>
+    <Text>Ah, vous revoici ! Tenez, pour vous récompenser de votre dévotion. Et si maintenant nous parlions un peu ?</Text>
+    <Action>GIVE/&lt;removecursescroll&gt;;SETONCARRIED,La Voie de la Vertu/completed2/true</Action>
+    <Condition>GETONCARRIED,La Voie de la Vertu,questholder,,completed1=true &amp; GETONCARRIED,La Voie de la Vertu,questholder,,completed2=false &amp; GETONCARRIED,La Voie de la Vertu,questholder,,completed3=false</Condition>
+    <DependsOn>0,-2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>30</EntryNumber>
+    <ID>30</ID>
+    <Text>Bonjour, que désirez vous ?</Text>
+    <Condition>~GETONCARRIED,La Voie de la Vertu,Visible=true</Condition>
+    <DependsOn>0,-2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>40</EntryNumber>
+    <ID>40</ID>
+    <Text>Hmm, vous possédez une copie de notre recueil de Psaumes, mais il est incomplet. Ou vous etes vous donc procuré cela ?</Text>
+    <Keywords>paladin,chevalerie</Keywords>
+    <DependsOn>30</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>50</EntryNumber>
+    <ID>50</ID>
+    <Text>Les brigands qui infestent les fermes semblent se rassembler sous la banière d'un certain Nerval. </Text>
+    <DependsOn>20</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>60</EntryNumber>
+    <ID>60</ID>
+    <Text>Il semble complètement insaisissable. Si vous pouviez enquéter...</Text>
+    <Action>SETONCARRIED,La Voie de la Vertu/Objective3/Enquéter sur Nerval, le seigneur Bandit</Action>
+    <DependsOn>50</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>60</EntryNumber>
+    <ID>60</ID>
+    <Text>Je vois. Mais suivez vous vraiment la voie de la Justice ? Plus qu'une idée, c'est une vocation. Si vous voulez que nous poursuivions, vous devriez tout d'abord aller prier à l'autel de Théodos.</Text>
+    <Keywords>Fabian</Keywords>
+    <Action>GIVE/&lt;questholder/name/La Voie de la Vertu/titlestring/La Voie de la Vertu/Objective1/Allez prier à l'autel de Théodos/repeatable/false/Autoreward/false</Action>
+    <DependsOn>40</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>80</EntryNumber>
+    <ID>80</ID>
+    <DependsOn />
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

@@ -1,0 +1,1 @@
+﻿- decrease kills counters on killed by a monster

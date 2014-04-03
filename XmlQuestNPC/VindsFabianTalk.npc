@@ -1,0 +1,171 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Fabian</Name>
+    <Running>True</Running>
+    <ProximityRange>5</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <NoTriggerOnCarried>Codex de Bataille,bookofchivalry</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>1</ResetTime>
+    <ConfigFile>VindsFabianTalk</ConfigFile>
+    <SpeechEntries>11</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Text>J'hésite, tout de même, j'ai peur de m'y ennuyer...*scrute intensément l'océan*</Text>
+    <DependsOn>-2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>10</EntryNumber>
+    <ID>10</ID>
+    <Text>Ah, de la visite. Je vous en prie, laissez moi à mes pensées. Je suis maudit et je dois agir en conséquence.</Text>
+    <Keywords>Bonjour</Keywords>
+    <DependsOn>0</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>2123</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>20</EntryNumber>
+    <ID>20</ID>
+    <Text>Et bien, comme vous pouvez le constater, je ne suis plus exactement le bellâtre que j'étais. Je n'ai même plus la peau sur les os, si vous voyez ce que je veux dire.</Text>
+    <Keywords>maudit</Keywords>
+    <DependsOn>10</DependsOn>
+    <Pause>4</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>2123</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>30</EntryNumber>
+    <ID>30</ID>
+    <Text>J'étais autrefois un chevalier, et un bon, jusqu'a ce que, et bien...je sois moins bon. Ce qui m'amène à cette situation génante.</Text>
+    <DependsOn>20</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>2123</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>40</EntryNumber>
+    <ID>40</ID>
+    <Text>Je suis un mort-vivant, bon sang ! Il ne me reste plus qu'a me jeter dans l'océan pour y mourir ! Enfin, tout du moins pour y attendre, mais c'est l'intention qui compte. Et personne à qui transmettre mon recueil de prières ...</Text>
+    <Keywords>situation,genante</Keywords>
+    <DependsOn>30</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>2123</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>50</EntryNumber>
+    <ID>50</ID>
+    <Text>Oh ! vous souhaitez devenir chevalier ? </Text>
+    <Keywords>priere,recueil</Keywords>
+    <DependsOn>40</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>2123</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>60</EntryNumber>
+    <ID>60</ID>
+    <Text>Hmm...Vous avez un drôle de passé pour un ecuyer. Voulez-vous abandonner votre voie actuelle ?</Text>
+    <Keywords>oui,chevalier,paladin</Keywords>
+    <Condition>GETONCARRIED,*,bookofninjitsu,,visible=true</Condition>
+    <DependsOn>50</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>2123</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>70</EntryNumber>
+    <ID>70</ID>
+    <Text>Vous rigolez, là ? Je sens en vous la même énergie qui m'a fait celà ! Bon, je veux bien vous laisser une chance, mais vous devez abandonner votre voie actuelle !</Text>
+    <Keywords>oui,chevalier,paladin</Keywords>
+    <Condition>GETONCARRIED,*,NecromancerSpellBook,,visible=true</Condition>
+    <DependsOn>50</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>2123</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>80</EntryNumber>
+    <ID>80</ID>
+    <Text>Hmm...C'est une noble voie que vous avez choisit, mais la voie du chevalier est exclusive. Voulez vous abandonner l'art du duel honorable ?</Text>
+    <Keywords>oui,chevalier,paladin</Keywords>
+    <Condition>GETONCARRIED,*,bookofbushido,,visible=true</Condition>
+    <DependsOn>50</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>2123</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>90</EntryNumber>
+    <ID>90</ID>
+    <Text>Qu'il en soit ainsi...</Text>
+    <Keywords>abandonner,oui</Keywords>
+    <Action>SETONCARRIED,*,necromancerspellbook,,/DELETE ; SETONCARRIED,*,bookofninjitsu,,/DELETE ; SETONCARRIED,*,bookofbushdo,,/DELETE </Action>
+    <DependsOn>60,70,80</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>2123</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>100</EntryNumber>
+    <ID>100</ID>
+    <Text>Très bien.. N'oubliez jamais vos idéaux. Bon, et maintenant, laissez moi réfléchir...</Text>
+    <Action>GIVE/&lt;bookofchivalry/name/Codex de Bataille&gt;;GIVE/closewoundsscroll;SETONCARRIED,*,necromancerspellbook,,/DELETE;SETONCARRIED,*,BookOfBushido,,/DELETE</Action>
+    <DependsOn>50,90</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>2123</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

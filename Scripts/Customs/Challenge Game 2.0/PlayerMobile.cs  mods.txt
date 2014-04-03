@@ -1,0 +1,35 @@
+add these flags:
+
+		isinchal		= 0x00100001,
+		canbechal		= 0x00100002,
+		TempMount		= 0x00100003
+
+Under 		private int m_Profession;
+
+		add 
+
+		private int m_Profession;
+		private bool isinchal = false;
+		private bool canbechal = true;
+		private BaseMount m_TempMount;
+		
+		[CommandProperty( AccessLevel.GameMaster ) ]
+		public BaseMount TempMount
+		{
+			get { return m_TempMount; }
+			set { m_TempMount = value; }
+		}
+		
+		[CommandProperty(AccessLevel.Counselor)]
+		public bool IsInChallenge
+		{
+			get{return isinchal;}
+			set{isinchal = value;}
+		}
+		
+		[CommandProperty(AccessLevel.Counselor)]
+		public bool CanBeChallenged
+		{
+			get{return canbechal;}
+			set{canbechal = value;}
+		}

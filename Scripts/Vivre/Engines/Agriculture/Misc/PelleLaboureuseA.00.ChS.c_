@@ -1,0 +1,192 @@
+﻿/**
+ * Chronos@17/03/09 : Pelle pour labourer la terre Version A
+ *
+ * Peut Labourer le gazon
+ * 
+ **/
+
+using System;
+using Server;
+using Server.Engines.Harvest;
+using Server.Network;
+using Server.Targeting;
+using Server.Mobiles;
+using Server.Items;
+using Server.Multis;
+
+namespace Server.Items
+{
+    public class PelleLaboureuseA : Item
+    {
+        private int UsesRemaining;
+        public static int[] GazonTiles = new int[] //Cases gazon acceptées
+		{
+			0x177D, 0x177E,
+            0x177F, 0x1780
+		};
+
+        public static int[] DirtTiles = new int[] //Cases Dirt acceptées
+		{
+            0x31F4, 0x31F5,
+            0x31F6, 0x31F7,
+            0x31F8, 0x31F9,
+            0x31FA, 0x31FB
+		};
+
+
+        public override void OnDoubleClick(Mobile from)
+        {
+            if (!this.IsChildOf(from.Backpack))
+            {
+                from.SendMessage("Vous devez avoir la pelle dans votre inventaire pour pouvoir l'utiliser");
+            }
+            else
+            {
+                from.Target = new LabourerTarget(from, from.Map, this);
+            }
+        }
+
+        public void decreaseUses(Mobile from)
+        {
+            UsesRemaining--;
+
+            if (this.UsesRemaining <= 0)
+            {
+                from.SendMessage("La pelle se brise entre vos mains.");
+                from.PlaySound(0x2A);
+                this.Delete();
+            }
+        }
+
+        private class LabourerTarget : Target
+        {
+            Mobile m_From;
+            Map m_map;
+            PelleLaboureuseA m_Pelle;
+
+            public LabourerTarget(Mobile from, Map map, PelleLaboureuseA pelle)
+                : base(-1, false, TargetFlags.None)
+            {
+                m_From = from;
+                m_map = map;
+                m_Pelle = pelle;
+                from.SendMessage("Ciblez le sol à labourer");
+            }
+
+
+            protected override void OnTarget(Mobile from, object targeted)
+            {
+                if (targeted is Mobile)
+                {
+                    from.SendMessage("Essayez plutôt sur le sol...");
+                }
+                else if (targeted is Item)
+                {
+                    Item targ = targeted as Item;
+                    IPoint3D t = targeted as IPoint3D;
+                    if (t == null)
+                        return;
+
+                    Point3D loc = new Point3D(t);
+                    if (t is StaticTarget)
+                        loc.Z -= TileData.ItemTable[((StaticTarget)t).ItemID & 0x3FFF].CalcHeight;
+
+                    int x = loc.X;
+                    int y = loc.Y;
+
+
+                    int tileID = m_map.Tiles.GetLandTile(x, y).ID & 0x3FFF;
+                    bool ground = false;
+
+                    if (targ.Name == "Gazon Labourable")
+                    {
+                        for (int i = 0; ground == false && i < GazonTiles.Length; i++) //Vérifier dans la liste de gazon acceptés si la target est Ok
+                        {
+                            if (GazonTiles[i] == targ.ItemID)
+                                ground = true;
+
+                        }
+                    }
+
+                    else if (targ.Name == "Terre Labourable")
+                    {
+                        for (int i = 0; ground == false && i < DirtTiles.Length; i++) //Vérifier dans la liste de gazon acceptés si la target est Ok
+                        {
+                            if (DirtTiles[i] == targ.ItemID)
+                                ground = true;
+
+                        }
+                    }
+
+                    if (ground == false)
+                        from.SendMessage("Vous ne pouvez pas labourer ceci...");
+
+                    if (loc.Y > m_From.Location.Y + 1 || loc.Y < m_From.Location.Y - 1)
+                    {
+                        m_From.SendMessage("C'est trop loin...");
+                        ground = false;
+                    }
+
+                    if (loc.X > m_From.Location.X + 1 || loc.X < m_From.Location.X - 1)
+                    {
+                        m_From.SendMessage("C'est trop loin...");
+                        ground = false;
+                    }
+
+
+                    if (ground == true)
+                    {
+                        int[] sons = new int[] { 0x125, 0x126 };
+                        int son = Utility.Random(0, 1);
+                        from.PlaySound(sons[son]);
+                        from.Animate(11, 1, 1, true, false, 0);
+                        from.Direction = from.GetDirectionTo(loc.X, loc.Y);
+                        from.SendMessage("Vous labourez le terrain");
+
+                        Item item = new Item(0x32C9);
+                        item.Name = "Terre labourée";
+                        item.Location = loc;
+                        item.Map = m_map;
+                        item.Movable = false;
+
+                    }
+
+                }
+            }
+        }
+
+        [Constructable]
+        public PelleLaboureuseA()
+            : this(50)
+        {
+        }
+
+        [Constructable]
+        public PelleLaboureuseA(int uses)
+            : base(0xF39)
+        {
+            Weight = 5.0;
+            Name = "Pelle de Fermier";
+            UsesRemaining = uses;
+        }
+
+        public PelleLaboureuseA(Serial serial)
+            : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+
+            writer.Write((int)0); // version
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+
+            int version = reader.ReadInt();
+        }
+    }
+}

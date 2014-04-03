@@ -1,0 +1,15 @@
+- titre des pages
+- enlever le gump quand on nome => fixed
+- descendre la liste des citoyens => fixed
+- doublons de titres => fixed => tous les titres sont reinitialisés (conseiller, ambassadeur, capitaine, gardes pj et pnj)
+- gardes n'attaquent pas le conseil => fixed
+- nommer un garde et pas ajouter => fixed
+- apres un demenagement, retirer sa candidature aux elections. => fixed (impossible de demenager pour les candidats)
+- gerer une distance max entre le spawner de garde et la pierre de ville => fixed
+- idem pour les deplacements
+
+// Scriptiz
+- Nomer >>> Nommer
+- Quand un bourgmestre nomme quelqu'un qui a déjà un titre, la personne cumule les deux titres
+- Pour mettre des Hors la loi on dirait que le système bug un peu ! A regarder
+- Quand la liste des citoyens est fort longue, elle sort sur la droite du gump quand on swith de page => fixed

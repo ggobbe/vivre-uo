@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes"?>
+<Spawns>
+  <Points>
+    <Name>KeyAugment#1</Name>
+    <UniqueId>8add4ae9-61eb-491b-9b6a-cbf1f09ddfac</UniqueId>
+    <Map>Felucca</Map>
+    <X>5441</X>
+    <Y>1159</Y>
+    <Width>10</Width>
+    <Height>10</Height>
+    <CentreX>5446</CentreX>
+    <CentreY>1164</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>5</Range>
+    <MaxCount>4</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <ContainerX>0</ContainerX>
+    <ContainerY>0</ContainerY>
+    <ContainerZ>0</ContainerZ>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <SmartSpawning>False</SmartSpawning>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>True</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>True</IsHomeRangeRelative>
+    <Objects2>metaldoor,0/name/Sesame/locked/true/keyvalue/12345/ATTACH/xmlsockets,1,false:MX=1:SB=0:RT=0:TO=0:KL=0:OBJ=keyaugment/name/Sesame/keyvalue/12345/usesremaining/-1:MX=1:SB=0:RT=0:TO=0:KL=0:OBJ=metaltreasurechest/name/Sesame's treasure/locked/true/keyvalue/2345/ATTACH/xmlsockets,1,false:MX=1:SB=0:RT=0:TO=0:KL=0:OBJ=keyaugment/name/Sesame's treasure/itemid/6884/keyvalue/2345:MX=1:SB=0:RT=0:TO=0:KL=0</Objects2>
+  </Points>
+</Spawns>
